@@ -1,0 +1,66 @@
+settings:
+  action-bar-xp: true          # show "+X Mining XP" above the hotbar
+  ignore-player-placed: true   # blocks a player placed give no XP/perks when broken (in-memory, resets on restart)
+  autosave-minutes: 5
+
+# XP needed to go from level L to L+1 = round(base * L ^ exponent)
+# With base 20 / exponent 1.15 reaching level 100 needs roughly 185k XP. Raise base to make it slower.
+xp-curve:
+  mining:     { base: 20, exponent: 1.15 }
+  woodcutting: { base: 20, exponent: 1.15 }
+  herbalism:  { base: 20, exponent: 1.15 }
+  herdmaster: { base: 10, exponent: 1.15 }
+
+xp:
+  mining:
+    default-ore: 8       # any *_ORE not listed below
+    default-stone: 1     # stone, deepslate, tuff, granite, netherrack, basalt, blackstone, end stone ...
+    blocks:              # DEEPSLATE_ ores use the same value as the normal ore
+      COAL_ORE: 4
+      COPPER_ORE: 4
+      IRON_ORE: 6
+      GOLD_ORE: 8
+      NETHER_GOLD_ORE: 3
+      REDSTONE_ORE: 6
+      LAPIS_ORE: 8
+      NETHER_QUARTZ_ORE: 4
+      EMERALD_ORE: 15
+      DIAMOND_ORE: 15
+      ANCIENT_DEBRIS: 30
+  woodcutting:
+    log: 6               # per log (every log cut by tree feller counts too)
+  herbalism:
+    default-flower: 2
+    blocks:              # crops only give XP when fully grown
+      WHEAT: 6
+      CARROTS: 6
+      POTATOES: 6
+      BEETROOTS: 7
+      NETHER_WART: 8
+      COCOA: 6
+      SWEET_BERRY_BUSH: 4
+      CAVE_VINES: 2
+      CAVE_VINES_PLANT: 2
+      MELON: 5
+      PUMPKIN: 5
+      SUGAR_CANE: 2
+      CACTUS: 2
+      BAMBOO: 1
+      BROWN_MUSHROOM: 3
+      RED_MUSHROOM: 3
+      SHORT_GRASS: 0.5
+      TALL_GRASS: 1
+      FERN: 1
+      LARGE_FERN: 1
+  herdmaster:
+    breed: 150           # per successful breeding
+
+woodcutting:
+  tree-feller-cooldown-seconds: 10   # removed at Woodcutting 100
+  min-natural-leaves: 4              # a log cluster needs at least this many NATURAL leaves to count as a tree
+
+herdmaster:
+  horse-limits:          # vanilla maximums, stat gains never go above these
+    health: 30.0
+    speed: 0.3375
+    jump: 1.0

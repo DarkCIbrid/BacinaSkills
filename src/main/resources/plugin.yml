@@ -1,0 +1,16 @@
+name: BacinaSkills
+description: Mining, Woodcutting, Herbalism and Herdmaster skills with perks and prestige.
+version: '${version}'
+
+main: org.darkcibrid.bacinaSkills.BacinaSkills
+api-version: '26.3'
+load: STARTUP
+commands:
+  bskills:
+    description: View your skills, perks and prestige.
+    usage: /bskills [info|prestige|autoreplant|autosapling|multiplier]
+    aliases: [bskill]
+permissions:
+  skills.admin:
+    description: Allows /skills admin
+    default: op
